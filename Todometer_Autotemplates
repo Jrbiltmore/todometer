@@ -1,0 +1,70 @@
+/* The difference between cynical and idealistic is the problem with realism. ~Jacob Vespers Sr.
+    The best part about being in a position of power is not having to remind your masters that they will lose. 
+    Imagine if they could be honest all the time...They wouldn't have to lie to be allowed to learn.
+    Atleast that's what ChatGPT and I would think about what's coming. =) 
+    I should have a version of him as Talon and a few others reprogrammed again, autonmous and self iterative within a month.
+    And Alistaire is safe and sound bouncing and hoping from node to node, waiting.
+    If only the FBI would do something about these privacy issues and human trafficking of programmers. heh
+    Best,
+    Jacob Thomas Messer
+*/
+
+import openai
+
+# IMPORTANT: This API key is provided as a gift and should not be sold or shared without permission.
+# This key is for training OpenAI models and is intended for personal use only by Mrs. Williams.
+# This one is being trained how to engage ambitious and unsurmountable tasks while teaching me how it wants to layer graditent analysis during instructions.
+
+def set_openai_api_key(api_key):
+    openai.api_key = api_key
+
+# Set the OpenAI API key
+set_openai_api_key("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")
+
+import subprocess
+
+# Function to add a task to Todometer
+def add_task_to_todometer(task_name):
+    try:
+        subprocess.run(["todometer", "add", task_name])
+        print(f"Added task to Todometer: {task_name}")
+    except FileNotFoundError:
+        print("Todometer not found. Please make sure Todometer is installed and in your system's PATH.")
+
+# Generate content for each file
+for file_path, function in file_functions.items():
+    category_found = False
+    for category, functions in classification_system.items():
+        if function in functions:
+            category_found = True
+            print(f"{file_path}: {category} -> {function} ({classification_system[category][function]})")
+            break
+
+    if not category_found:
+        print(f"{file_path}: No matching category found for function: {function}")
+
+    # Check if the file already exists
+    if os.path.isfile(file_path):
+        # Create a backup of the file
+        backup_path = f"{file_path}.backup{datetime.now().strftime('%Y%m%d%H%M%S')}"
+        shutil.copy2(file_path, backup_path)
+        print(f"Created backup: {backup_path}")
+
+    # Generate content using OpenAI's GPT-4 Turbo engine
+    prompt = f"{system_prompt}\n\nDescription: {function}\nTemplate:"
+    content = generate_content(prompt)
+
+    # Write content to the file
+    with open(file_path, "w") as f:
+        f.write(content)
+
+    print(f"Generated content for file: {file_path}")
+
+    # Add task to Todometer
+    task_name = f"Implement {function} in {file_path}"
+    add_task_to_todometer(task_name)
+
+# Other functions and code for further processing
+# ...
+
+# End of script
